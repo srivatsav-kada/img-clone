@@ -1,0 +1,139 @@
+ /* .container{
+  
+ width: 31%;
+ height: 17%;   
+margin-bottom: 20px;
+}
+
+
+.first {
+    display: flex;
+    margin-bottom: 20px;
+}
+  
+  .first button {
+    margin-left: 70%; 
+  }
+  
+
+  .btn-group button {
+  
+    color: white; 
+    padding: 10px 24px;
+    cursor: pointer;
+    float: left; 
+    width: 49%;
+  }
+  
+
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-right: none; 
+  }
+  
+  
+  .btn-group button:hover {
+    background-color: #3e8e41;
+  }
+
+  
+  .formc button {
+    color: black; 
+    padding: 10px 0; 
+    background: none;
+    border: none; 
+    border-bottom: 1px solid #ccc; 
+    flex: 1; 
+    text-align: center;
+    cursor: pointer; 
+    font-size: 16px; 
+    outline: none; 
+  }
+  
+  .formc button:hover {
+    background-color: #f0f0f0; 
+  }
+  
+  .formc button:focus,
+  .formc button:active {
+    color: #AE2E2D; 
+    border-bottom: 2px solid #AE2E2D;
+  }
+
+  h2{
+    color: #AE2E2D;
+    
+  }  */
+/* --------------------------------------- */
+
+  h2 {
+    color: #AE2E2D;
+  }
+  
+  .btn-primary {
+    width: 50%;
+  }
+  
+  .btn-primary:not(:last-child) {
+    border-right: 1px solid white;
+  }
+  
+  .btn-link {
+    padding: 0;
+    margin: 0;
+  }
+  
+ 
+  
+  .btn-link img {
+    display: block;
+  }
+  
+  
+  button {
+    color: black; 
+    padding: 10px 0; 
+    background: none;
+    border: none; 
+    border-bottom: 1px solid #ccc; 
+    flex: 1; 
+    text-align: center;
+    cursor: pointer; 
+    font-size: 16px; 
+    outline: none; 
+  }
+  button:hover {
+    background-color: #f0f0f0; 
+    color: black;
+  }
+
+  /* Remove focus outline and color change */
+.btn-primary:focus,
+.btn-primary:active,
+.btn-link:focus,
+.btn-link:active {
+  outline: none;
+  box-shadow: none;
+  background-color: transparent; /* Ensure no background color change */
+  color: inherit; /* Ensure text color remains the same */
+  border-color: inherit; /* Ensure border color remains the same */
+}
+
+.btn-primary:focus,
+.btn-primary:active {
+  color: #AE2E2D; /* Keep your custom active text color */
+  border-bottom: 2px solid #AE2E2D; /* Keep your custom active border */
+}
+
+/*  
+  button:focus,
+  button:active {
+    color: #AE2E2D;
+    border-bottom: 2px solid #AE2E2D;
+  } */
+ 

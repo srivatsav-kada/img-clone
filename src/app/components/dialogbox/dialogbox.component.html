@@ -1,0 +1,32 @@
+<!-- 
+
+<div class="modal-container">
+    <div class="modal-header">
+      <span> Failed</span>
+      <span class="close-btn" (click)="onCloseClick()">×</span>
+    </div>
+    <div class="modal-content">
+      <p>{{ data.errorMessage }}</p>
+    </div>
+  </div>
+   -->
+
+   <div class="modal fade show d-block" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content border-danger">
+        <div class="modal-header bg-danger text-white">
+          <h3 class="modal-title">Failed</h3>
+          <!-- <button type="button" class="close text-white" aria-label="Close" (click)="onCloseClick()">
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+        </div>
+        <div class="modal-body">
+          <p>{{ data.errorMessage }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="onCloseClick()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

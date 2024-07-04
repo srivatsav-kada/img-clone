@@ -1,0 +1,79 @@
+<!-- <div class="confirmation-container">
+    <h2>Confirmation</h2>
+    <div class="detail">
+      <span class="detail-label">Amount:</span>
+      <span class="detail-value">{{ paymentDetails.amount }}</span>
+    </div>
+    <div class="detail">
+      <span class="detail-label">Beneficiary:</span>
+      <span class="detail-value">{{ paymentDetails.beneficiaryType }}</span>
+    </div>
+    <div class="detail">
+      <span class="detail-label">From Account:</span>
+      <span class="detail-value">{{ paymentDetails.debitAccount }}</span>
+    </div>
+    <div class="detail">
+      <span class="detail-label">Purpose of Transfer:</span>
+      <span class="detail-value">{{ paymentDetails.purpose }}</span>
+    </div>
+    <div class="detail">
+      <span class="detail-label">Type:</span>
+      <span class="detail-value">{{ paymentDetails.transferType }}</span>
+    </div>
+    
+    <div class="detail" *ngIf="paymentDetails.transferType === 'scheduled'">
+      <span class="detail-label">Scheduled Date:</span>
+      <span class="detail-value">{{ paymentDetails.scheduledDate }}</span>
+    </div>
+    
+    <div class="detail" *ngIf="paymentDetails.transferType === 'recurring'">
+      <span class="detail-label">Frequency:</span>
+      <span class="detail-value">{{ paymentDetails.frequency }}</span>
+      <span class="detail-label">Start Date:</span>
+      <span class="detail-value">{{ paymentDetails.startDate }}</span>
+      <span class="detail-label">Installments:</span>
+      <span class="detail-value">{{ paymentDetails.installments }}</span>
+    </div>
+    <button mat-button (click)="openOtpDialog()">Confirm</button>
+  </div>
+   -->
+   <div class="confirmation-container">
+    <h2>Confirmation</h2>
+    <div class="detail">
+      <span class="detail-label">Amount:</span>
+      <span class="detail-value">{{ paymentDetails.amount }}</span>
+    </div>
+    <div class="detail">
+      <span class="detail-label">Beneficiary:</span>
+      <span class="detail-value">{{ paymentDetails.beneficiaryType }}</span>
+    </div>
+    <div class="detail">
+      <span class="detail-label">From Account:</span>
+      <span class="detail-value">{{ paymentDetails.debitAccount }}</span>
+    </div>
+    <div class="detail">
+      <span class="detail-label">Purpose of Transfer:</span>
+      <span class="detail-value">{{ paymentDetails.purpose }}</span>
+    </div>
+    <div class="detail">
+      <span class="detail-label">Type:</span>
+      <span class="detail-value">{{ paymentDetails.transferType }}</span>
+    </div>
+  
+    <div class="detail" *ngIf="paymentDetails.transferType === 'scheduled'">
+      <span class="detail-label">Scheduled Date:</span>
+      <span class="detail-value">{{ paymentDetails.scheduledDate }}</span>
+    </div>
+  
+    <div class="detail" *ngIf="paymentDetails.transferType === 'recurring'">
+      <span class="detail-label">Frequency:</span>
+      <span class="detail-value">{{ paymentDetails.frequency }}</span>
+      <span class="detail-label">Start Date:</span>
+      <span class="detail-value">{{ paymentDetails.startDate }}</span>
+      <span class="detail-label">Installments:</span>
+      <span class="detail-value">{{ paymentDetails.installments }}</span>
+    </div>
+  
+    <button mat-button (click)="openOtpDialog()">Confirm</button>
+  </div>
+  

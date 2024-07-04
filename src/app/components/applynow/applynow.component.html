@@ -1,0 +1,145 @@
+ <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <h2>Personal Details</h2>
+  <div class="form-group">
+    <label class="radio-button" [class.active]="registrationForm.get('title')?.value === 'Mr'">
+      <input type="radio" formControlName="title" value="Mr"> Mr
+    </label>
+    <label class="radio-button" [class.active]="registrationForm.get('title')?.value === 'Mrs'">
+      <input type="radio" formControlName="title" value="Mrs"> Mrs
+    </label>
+    <div *ngIf="registrationForm.get('title')?.invalid && (registrationForm.get('title')?.touched || registrationForm.get('title')?.dirty)">
+      <small *ngIf="registrationForm.get('title')?.errors?.['required']">Title is required.</small>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="form-row">
+      <div class="form-field">
+        <label for="firstName">First Name:</label>
+        <input id="firstName" formControlName="firstName" type="text" pattern="^[a-zA-Z0-9]+( [a-zA-Z0-9]+)*$">
+        <div *ngIf="registrationForm.get('firstName')?.invalid && (registrationForm.get('firstName')?.touched || registrationForm.get('firstName')?.dirty)">
+          <small *ngIf="registrationForm.get('firstName')?.errors?.['required']">First Name is required.</small>
+          <small *ngIf="registrationForm.get('firstName')?.errors?.['pattern']">Username must contain only alphabets and numbers and single spaces.</small>
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="lastName">Last Name:</label>
+        <input id="lastName" formControlName="lastName" type="text">
+        <div *ngIf="registrationForm.get('lastName')?.invalid && (registrationForm.get('lastName')?.touched || registrationForm.get('lastName')?.dirty)">
+          <small *ngIf="registrationForm.get('lastName')?.errors?.['required']">Last Name is required.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-row">
+      <div class="form-field">
+        <label for="dob">Date of Birth:</label>
+        <input id="dob" formControlName="dob" type="date">
+        <div *ngIf="registrationForm.get('dob')?.invalid && (registrationForm.get('dob')?.touched || registrationForm.get('dob')?.dirty)">
+          <small *ngIf="registrationForm.get('dob')?.errors?.['required']">Date of Birth is required.</small>
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="maritalStatus">Marital Status:</label>
+        <select id="maritalStatus" formControlName="maritalStatus">
+          <option *ngFor="let status of maritalStatuses" [value]="status">{{ status }}</option>
+        </select>
+        <div *ngIf="registrationForm.get('maritalStatus')?.invalid && (registrationForm.get('maritalStatus')?.touched || registrationForm.get('maritalStatus')?.dirty)">
+          <small *ngIf="registrationForm.get('maritalStatus')?.errors?.['required']">Marital Status is required.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Communication Address</h2>
+
+  <div class="form-group">
+    <div class="form-row">
+      <div class="form-field">
+        <label for="addressLine1">Address Line 1:</label>
+        <input id="addressLine1" formControlName="addressLine1" type="text">
+        <div *ngIf="registrationForm.get('addressLine1')?.invalid && (registrationForm.get('addressLine1')?.touched || registrationForm.get('addressLine1')?.dirty)">
+          <small *ngIf="registrationForm.get('addressLine1')?.errors?.['required']">Address Line 1 is required.</small>
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="addressLine2">Address Line 2:</label>
+        <input id="addressLine2" formControlName="addressLine2" type="text">
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-row">
+      
+      <div class="form-field">
+        <label for="country">Country:</label>
+        <select id="country" formControlName="country">
+          <option *ngFor="let country of countries" [value]="country.code">{{ country.name }}</option>
+        </select>
+        <div *ngIf="registrationForm.get('country')?.invalid && (registrationForm.get('country')?.touched || registrationForm.get('country')?.dirty)">
+          <small *ngIf="registrationForm.get('country')?.errors?.['required']">Country is required.</small>
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="state">State:</label>
+        <input id="state" formControlName="state" type="text" (input)="onStateInput($event)" (focus)="onStateFocus()" (blur)="onStateBlur()">
+        <div *ngIf="registrationForm.get('state')?.invalid && (registrationForm.get('state')?.touched || registrationForm.get('state')?.dirty)">
+          <small *ngIf="registrationForm.get('state')?.errors?.['required']">State is required.</small>
+        </div>
+        <div *ngIf="showDropdown && filteredStates.length > 0" class="dropdown">
+          <div *ngFor="let state of filteredStates" (mousedown)="selectState(state)">
+            {{ state }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-row">
+      <div class="form-field">
+        <label for="city">City:</label>
+        <input id="city" formControlName="city" type="text">
+        <div *ngIf="registrationForm.get('city')?.invalid && (registrationForm.get('city')?.touched || registrationForm.get('city')?.dirty)">
+          <small *ngIf="registrationForm.get('city')?.errors?.['required']">City is required.</small>
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="pinCode">Pin Code:</label>
+        <input id="pinCode" formControlName="pinCode" type="text">
+        <div *ngIf="registrationForm.get('pinCode')?.invalid && (registrationForm.get('pinCode')?.touched || registrationForm.get('pinCode')?.dirty)">
+          <small *ngIf="registrationForm.get('pinCode')?.errors?.['required']">Pin Code is required.</small>
+          <small *ngIf="registrationForm.get('pinCode')?.errors?.['pattern']">Pincode is invalid.</small>
+             
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="mobileNumber">Mobile Number:</label>
+    <div class="input-field">
+      <div style="padding-top: 15px; padding-right: 1%;">
+        <span>{{ selectedCountryDialCode }}</span>
+      </div>
+      <input id="mobileNumber" formControlName="mobileNumber" type="text">
+    </div>
+    <div *ngIf="registrationForm.get('mobileNumber')?.invalid && (registrationForm.get('mobileNumber')?.touched || registrationForm.get('mobileNumber')?.dirty)">
+      <small *ngIf="registrationForm.get('mobileNumber')?.errors?.['required']">Mobile Number is required.</small>
+      <small *ngIf="registrationForm.get('mobileNumber')?.errors?.['pattern']">Mobile Number format is invalid.</small>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="form-row">
+      <div class="form-field">
+        <button style="width: 100%;" type="button" (click)="onPrevious()">Previous</button>
+      </div>
+      <div class="form-field">
+        <button style="width: 100%;" type="submit">Next</button>
+      </div>
+    </div>
+  </div>
+</form>

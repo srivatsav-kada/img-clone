@@ -1,0 +1,21 @@
+<form [formGroup]="mailForm" (ngSubmit)="sendMail()" class="mail-form">
+  <div class="form-group">
+    <label for="subject">Subject:</label>
+    <input id="subject" type="text" formControlName="subject" class="form-control">
+    <div *ngIf="mailForm.get('subject')?.invalid && (mailForm.get('subject')?.dirty || mailForm.get('subject')?.touched)" class="error">
+      Subject is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="body">Message:</label>
+    <textarea id="body" formControlName="body" class="form-control"></textarea>
+    <div *ngIf="mailForm.get('body')?.invalid && (mailForm.get('body')?.dirty || mailForm.get('body')?.touched)" class="error">
+      Message is required
+    </div>
+  </div>
+  <div class="form-buttons">
+    <button type="button" (click)="cancel()" class="btn btn-secondary">Cancel</button>  
+    <button type="submit" [disabled]="mailForm.invalid" class="btn btn-primary">Send</button>
+   
+  </div>
+</form>

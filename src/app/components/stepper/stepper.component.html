@@ -1,0 +1,89 @@
+ <!-- <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+       
+        <app-activate-account-page></app-activate-account-page>
+        <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+    <app-tax-form></app-tax-form>
+    <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+        <app-activate-account-password></app-activate-account-password>
+      
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </mat-step>
+
+    <mat-step>
+
+
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+    
+  </mat-stepper> 
+   -->
+   <mat-horizontal-stepper [linear]="isLinear" #stepper class="custom-stepper" (selectionChange)="onStepChange($event)">
+    <mat-step [stepControl]="firstFormGroup">
+
+      <app-activate-account-page (formSubmit)="onNextStepOFForm($event)"></app-activate-account-page>
+      <div class="stepper-buttons">
+        <button mat-raised-button color="primary" matStepperNext (click)="ActivateAccountOnNext()">Next</button>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+   
+      <app-tax-form></app-tax-form>
+      <div class="stepper-buttons">
+        <button mat-raised-button color="accent" matStepperPrevious (click)="TaxFormOnPrevious()">Back</button>
+        <button mat-raised-button color="primary" matStepperNext (click)="TaxFormOnNext()">Next</button>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+    
+      <app-activate-account-password></app-activate-account-password>
+   
+      <div class="stepper-buttons">
+        <button mat-raised-button color="accent" matStepperPrevious (click)="ActivateAccountPswdOnPrevious()">Back</button>
+        <button mat-raised-button color="primary" matStepperNext (click)="ActivateAccountPswdOnNext()">Next</button>
+      </div>
+    </mat-step>
+
+
+
+    <mat-step [stepControl]="fourthFormGroup">
+    
+      <!-- <app-activate-account-password></app-activate-account-password> -->
+       
+      <button style="margin:17% 0 15% 49% ;" mat-button (click)="onSubmit()">Submit</button>
+      <div class="stepper-buttons">
+        <button mat-raised-button color="accent" matStepperPrevious >Back</button>
+        <!-- <button mat-raised-button color="primary" matStepperNext>Next</button> -->
+        <button mat-raised-button color="warn" (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+
+<!-- 
+    <mat-step>
+ 
+      <p>You are now done.</p>
+      <button (click)="onFinalSubmit()">Final Submit</button>
+      <div class="stepper-buttons">
+        <button mat-raised-button color="accent" matStepperPrevious (click)="finalPageOnPrevious()">Back</button>
+        <button mat-raised-button color="warn" (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step> -->
+  </mat-horizontal-stepper>
+  

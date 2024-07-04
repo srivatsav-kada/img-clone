@@ -1,0 +1,79 @@
+/* registration-failed-modal.component.css
+
+.modal-container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+
+  }
+  
+  .modal-header {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .modal-content {
+    margin-bottom: 20px;
+  }
+  
+  .close-btn {
+    cursor: pointer;
+    color: #333;
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .close-btn:hover {
+    color: #000;
+  }
+   */
+
+   .modal.show.d-block {
+    display: block;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    border-radius: 10px;
+  }
+  
+  .modal-header {
+    border-bottom: none;
+  }
+  
+  .modal-body {
+    font-size: 1.1em;
+  }
+  
+  .modal-footer {
+    border-top: none;
+  }
+  
+  .close {
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    opacity: 1;
+  }
+  
+  .close:hover {
+    opacity: 0.75;
+  }
+  
+  .btn-danger {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c9302c;
+    border-color: #ac2925;
+  }
+  

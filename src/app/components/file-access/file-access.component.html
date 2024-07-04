@@ -1,0 +1,21 @@
+<!-- <div *ngIf="fileUrl" class="uploaded-file">
+  <h2>Uploaded File</h2>
+  <button mat-raised-button color="primary" class="custom-button" (click)="openFile()">Open Uploaded File</button>
+</div>
+<div *ngIf="!fileUrl" class="no-file">
+  <p>No file uploaded.</p>
+</div> -->
+
+<h4 style="margin: 10px ">This year</h4>
+<ul class="month-list">
+  <li *ngFor="let month of months">
+    {{ month }}
+    <button mat-raised-button color="primary" class="custom-button" (click)="handleClick(month)">Open File</button>
+  </li>
+</ul>
+<br>
+
+<h4 style="margin: 10px;">Last Year</h4>
+<ul class="month-list">
+  <li *ngFor="let month of lstYearmonths">{{ month }}</li>
+</ul>

@@ -1,0 +1,379 @@
+/* 
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #333;
+    padding:0 50px 0 50px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    padding:0 80px 0 60px;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .form-field {
+    flex: 1;
+    min-width: 45%;
+    margin-right: 10px;
+  }
+  
+  .form-field:last-child {
+    margin-right: 0;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+  
+  small {
+    color: red;
+    display: block;
+    margin-top: 5px;
+  }
+  
+  button {
+    margin-right: 10px;
+    padding: 10px 20px;
+  }
+  
+  button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+  }
+  
+  button[type="button"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  #mobileNumber {
+    
+    width: 50%;
+  }
+
+  .input-field {
+    display: flex;
+    align-items: center;
+  }
+
+
+@media screen and (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+    }
+  
+    .form-field {
+      min-width: 100%;
+      margin-right: 0;
+    }
+  
+    button {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    .input-field {
+        width: 200%; 
+      }
+   
+  }
+
+  form{
+    padding-bottom: 50px;
+  
+  } */
+/* 
+  h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #333;
+    padding: 0 50px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    padding: 0 80px;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .form-field {
+    flex: 1;
+    min-width: 45%;
+    margin-right: 10px;
+  }
+  
+  .form-field:last-child {
+    margin-right: 0;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+  
+  small {
+    color: red;
+    display: block;
+    margin-top: 5px;
+  }
+  
+  button {
+    margin-right: 10px;
+    padding: 10px 20px;
+  }
+  
+  button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+  }
+  
+  button[type="button"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+ 
+  
+  .input-field {
+    display: flex;
+    align-items: center;
+  }
+  
+  #mobileNumber {
+    width: auto;
+  }
+ 
+  @media screen and (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+    }
+  
+    .form-field {
+      min-width: 100%;
+      margin-right: 0;
+    }
+  
+    button {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .input-field {
+      width: 200%;
+    }
+    #mobileNumber {
+      width: 50%;
+    }
+  }
+  
+  form {
+    padding-bottom: 50px;
+    overflow: hidden; 
+  }
+  
+  form::-webkit-scrollbar {
+    display: none; 
+  }
+  
+  .radio-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .radio-button input[type="radio"] {
+    display: none;
+  }
+  
+  .radio-button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  
+  .radio-button:hover {
+    background-color: #007bff;
+    color: white;
+  }
+   */
+
+
+   h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #ae2e2d;
+    padding: 0 50px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    padding: 0 80px;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .form-field {
+    flex: 1;
+    min-width: 45%;
+    margin-right: 10px;
+  }
+  
+  .form-field:last-child {
+    margin-right: 0;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+  
+  small {
+    color: red;
+    display: block;
+    margin-top: 5px;
+  }
+  
+  button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    
+  }
+  
+  button[type="submit"] {
+    background-color: #053C6D;
+    color: white;
+    border: none;
+  }
+  
+  button[type="button"] {
+    /* background-color: #007bff;  */
+    background-color: white;
+    color: black;
+    font-weight: 500;
+    border: 1px solid black;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .input-field {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensure the input field spans full width */
+  }
+  
+  #mobileNumber {
+    width: 46%; /* Make mobile number input field the same width as others */
+  }
+  
+  /* Media Query for responsiveness */
+  @media screen and (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+    }
+  
+    .form-field {
+      min-width: 100%;
+      margin-right: 0;
+    }
+  
+    button {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .input-field {
+      width: 100%;
+    }
+
+    #mobileNumber {
+      width: 92%; /* Make mobile number input field the same width as others */
+    }
+  }
+  
+  form {
+    padding-bottom: 50px;
+    overflow: hidden; /* Hide overflow to remove scrollbar */
+  }
+  
+  form::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for webkit browsers */
+  }
+  
+  .radio-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .radio-button input[type="radio"] {
+    display: none;
+  }
+  
+  .radio-button.active {
+    /* background-color: #007bff; */
+    color: black;
+    /* border-color: #007bff; */
+    border: 1px solid #ae2e2d;
+  }
+  
+  .radio-button:hover {
+    /* background-color: #ae2e2d; */
+    border:1px solid #ae2e2d;
+    color: black;
+  }
+  

@@ -1,0 +1,71 @@
+/* tax-form.styles.css */
+
+/* Style for the form container */
+.tax-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for form labels */
+  .tax-form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* Style for form inputs and radio buttons */
+  .tax-form-container input[type="text"],
+  .tax-form-container select {
+    width: calc(100% - 6px); /* Adjust width to fit container */
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Style for radio button groups */
+  .tax-form-container .radio-group {
+    display: flex;
+    flex-direction: row;
+   margin-bottom: 10px;
+   
+  }
+  
+  .tax-form-container .radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+    margin-right: 10px;
+  }
+  
+  .tax-form-container .radio-group input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  /* Hide hidden elements */
+  .tax-form-container [hidden] {
+    display: none;
+  }
+  
+  /* Optional: Style for select dropdowns */
+  .tax-form-container select {
+    width: 100%;
+    padding: 8px;
+  }
+  
+  /* Optional: Style for the form section headers */
+  .tax-form-container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+
+ 

@@ -1,0 +1,9 @@
+<div class="beneficiary-cards-container">
+  <div class="beneficiary-card" *ngFor="let beneficiary of beneficiaries$ | async">
+    <div class="beneficiary-info">
+      <div class="beneficiary-type">{{ beneficiary.beneficiaryType }}</div>
+      <div class="beneficiary-iban">IBAN ( {{ beneficiary.IBAN }} )</div>
+    </div>
+    <button class="details-button" (click)="onDetailsClick(beneficiary)">Details</button>
+  </div>
+</div>

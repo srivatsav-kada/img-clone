@@ -1,0 +1,61 @@
+
+  <div class="form-container">
+      <br>
+      <h4>Enter Your Login Details</h4>
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <div class="input-wrapper">
+            <img src="../../../assets/user_icon_sm.svg" alt="Profile Logo" class="profile-logo">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="form-control"
+            ngModel
+            required
+            minlength="1"
+            maxlength="15"
+            pattern="^[a-zA-Z0-9]+( [a-zA-Z0-9]+)*$"
+            #username="ngModel"
+          />
+          </div>
+          <div *ngIf="username.invalid &&(username.dirty || username.touched)">
+            <p *ngIf="username.errors?.['required']">Username is required.</p>
+            <p *ngIf="username.errors?.['maxlength']">Username must be less than 15 characters.</p>
+            <p *ngIf="username.errors?.['pattern']">Username must contain only alphabets and numbers and single spaces.</p>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-wrapper">
+            <img src="../../../assets/key_icon.svg" alt="Profile Logo" class="profile-logo">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            ngModel
+            required
+            minlength="8"
+            maxlength="20"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+"
+            #password="ngModel"
+          />
+          </div>
+          <div *ngIf="password.invalid && (password.dirty || password.touched)">
+            <p *ngIf="password.errors?.['required']">Password is required.</p>
+            <p *ngIf="password.errors?.['minlength']">Password must be at least 8 characters long.</p>
+            <p *ngIf="password.errors?.['maxlength']">Password must be less than 20 characters.</p>
+            <p *ngIf="password.errors?.['pattern']">
+              Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.
+            </p>
+          </div>
+        </div>
+    
+        <button type="submit" class="btn" >Login</button>
+      
+      </form>
+    </div>
+    

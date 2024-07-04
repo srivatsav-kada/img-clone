@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    margin-top: 10px;
+ 
+  }
+  
+  .mail-list {
+    width: 30%;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+ 

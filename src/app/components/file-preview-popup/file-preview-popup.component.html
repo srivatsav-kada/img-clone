@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>File Preview</h2>
+<mat-dialog-content>
+  <ng-container *ngIf="isImageFile(filePreviewUrl); else pdfViewer">
+    <img *ngIf="filePreviewUrl" [src]="filePreviewUrl" alt="File Preview">
+    <div *ngIf="!filePreviewUrl">No file preview available.</div>
+  </ng-container>
+  <ng-template #pdfViewer>
+    <iframe *ngIf="filePreviewUrl" [src]="filePreviewUrl | safeUrl" width="100%" height="600px" frameborder="0"></iframe>
+    <div *ngIf="!filePreviewUrl">No file preview available.</div>
+  </ng-template>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Close</button>
+</mat-dialog-actions>

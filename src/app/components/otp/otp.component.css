@@ -1,0 +1,95 @@
+h1 {
+  background-color: orange;
+}
+
+.otpname {
+  color: green;
+  text-align: center;
+}
+
+.mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styling for the OTP text */
+p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Styling for the form */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styling for the form fields */
+.mat-form-field {
+  width: 100%;
+  margin: 10px 0;
+  background-color: white; /* Set the background color of the form field to white */
+}
+
+/* Ensure the mat-label background is white */
+.mat-form-field-label {
+  background-color: white;
+  padding: 0 5px;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: black !important; /* Ensure the label color is black when focused */
+}
+
+.mat-form-field-underline {
+  background-color: black; /* Set the underline color to black */
+}
+
+/* Styling for the input field */
+input[matInput] {
+  width: 100%;
+  border: none;
+  border-bottom: 15px solid black;
+  background: white; /* Set the background color of the input field to white */
+  box-shadow: none;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* Styling for the status message */
+p.status-message {
+  font-size: 14px;
+  margin: 5px 0;
+  align-self: flex-start; /* Align status message to the start */
+}
+
+p.status-message.error {
+  color: red;
+}
+
+p.status-message.success {
+  color: green;
+}
+
+/* Container for the dialog actions */
+.mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Styling for the buttons */
+button[mat-button] {
+  min-width: 100px;
+}
+
+.dfkdfd{
+
+  border:none;
+  width:100%
+}
+

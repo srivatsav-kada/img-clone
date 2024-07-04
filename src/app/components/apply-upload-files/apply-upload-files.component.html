@@ -1,0 +1,59 @@
+<div class="container">
+  <h2>Upload a clear and legible copy of the following documents</h2>
+  <div class="file-input-container">
+      <input type="file" id="fileInput" (change)="handleFileInput($event)">
+      <label for="fileInput">Choose File</label>
+  </div>
+  <div>
+      <ul>
+          <li>Scan the first page & last page of Passport and Communication Address Proof (if different from Passport address)</li>
+          <li>If you are using Aadhar card as Communication Address Proof, please upload Masked Aadhaar. You can download the Masked Aadhar by visiting the official UIDAI website at http://uidai.gov.in/</li>
+          <li>Save all Pages as One Document in PDF/JPEG Format</li>
+      </ul>
+  </div>
+  <div class="button-container">
+      <button mat-raised-button color="primary" [disabled]="!filePreviewUrl" (click)="previewFile()">Preview</button>
+       <button mat-raised-button color="warn" (click)="clearFile()">Clear</button> 
+  </div>
+  
+  <div class="services-container">
+      <h2>Additional Services</h2>
+      <span>Please click on the ICON button to get answers to all your doubts while travelling to Germany.</span>
+      <div>
+          <input type="checkbox" id="box1" name="box1" value="box1">
+          <label for="box1"> How can I get financial support for pursuing higher education in Germany.</label>
+      </div>
+
+      <div>
+          <input type="checkbox" id="box2" name="box2" value="box2">
+          <label for="box2"> How can I send my fees from any bank in India to any bank in Germany conveniently and quickly</label>
+      </div>
+
+      <div>
+          <input type="checkbox" id="box3" name="box3" value="box3">
+          <label for="box3"> How can I get my German health Insurance at a competitive rate.</label>
+      </div>
+
+      <div>
+          <input type="checkbox" id="box4" name="box4" value="box4">
+          <label for="box4"> How can I travel with no worries of carrying cash.</label>
+      </div>
+
+      <div>
+          <input type="checkbox" id="box5" name="box5" value="box5">
+          <label for="box5"> I would like to know about ICICI Bank NRI Account opening and request a call back</label>
+      </div>
+  </div>
+  
+  <div class="note">
+      Please select the service you are interested in and you will receive an email and/or call with further details.
+  </div>
+  <div class="note">
+      Please note: By clicking on the application service, you agree that your relevant business-related data is shared with ICICI Bank Limited, India and Feather and reciprocal.
+  </div>
+</div>
+
+<div class="btn">
+
+    <button style="background: transparent; color: white; border: none;" (click)="submitFormdd()">Submit Form</button>
+  </div>

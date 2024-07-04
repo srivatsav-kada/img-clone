@@ -1,0 +1,16 @@
+<h2>Items</h2>
+  <button (click)="addItem()">Add Item</button>
+  <ul>
+    <li *ngFor="let item of items$ | async">
+      {{ item.name }}
+      <button (click)="removeItem(item.id)">Remove</button>
+    </li>
+  </ul>
+
+  <h2>Counter</h2>
+  <div>
+    <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
+    <button (click)="reset()">Reset</button>
+  </div>
+  <div>Current Count: {{ counter$ | async }}</div>

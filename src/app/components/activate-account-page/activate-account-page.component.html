@@ -1,0 +1,174 @@
+<!-- 
+<div *ngIf="(selectedApplicant$ | async) as selectedApplicant; else loading">
+  <h2>Selected Applicant</h2>
+
+
+  <form *ngIf="selectedApplicant">
+    <div>
+      <label>Title:</label>
+      <input type="text" [value]="selectedApplicant.title" disabled />
+    </div>
+    <div>
+      <label>First Name:</label>
+      <input type="text" [value]="selectedApplicant.firstName" disabled />
+    </div>
+    <div>
+      <label>Last Name:</label>
+      <input type="text" [value]="selectedApplicant.lastName" disabled />
+    </div>
+    <div>
+      <label>Mother's Name:</label>
+      <input type="text" [value]="selectedApplicant.MothersName"  />
+    </div>
+    <div>
+      <label>Address:</label>
+      <input type="text" [value]="selectedApplicant.Address"  />
+    </div>
+    <div>
+      <label>City:</label>
+      <input type="text" [value]="selectedApplicant.City"  />
+    </div>
+    <div>
+      <label>Postal Code:</label>
+      <input type="text" [value]="selectedApplicant.PostalCode"  />
+    </div>
+    <div>
+      <label>Country:</label>
+      <input type="text" [value]="selectedApplicant.Country" disabled />
+    </div>
+    <div>
+      <label>Mobile:</label>
+      <input type="text" [value]="selectedApplicant.Mobile"  />
+    </div>
+
+
+
+  </form>
+</div>
+
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
+ -->
+
+ <!-- lsalkdml -->
+<!-- 
+
+ <div *ngIf="(selectedApplicant$ | async) as selectedApplicant; else loading">
+
+  <form *ngIf="selectedApplicant">
+    <h4>Update Personal Details</h4>
+    <div class="form-row">
+      <div>
+        <label>First Name:</label>
+        <input type="text" [value]="selectedApplicant.firstName" disabled />
+      </div>
+      <div>
+        <label>Last Name:</label>
+        <input type="text" [value]="selectedApplicant.lastName" disabled />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="inp">
+        <label>Mother's Maiden Name:</label>
+        <input type="text" [value]="selectedApplicant.MothersName" />
+      </div>
+     
+      </div>
+      <small class="caution">It is a Security Question. We may use for Verifying your Identity in the Future.</small>
+      <h4>Please Provide your Address in Germany</h4>
+      <small class="caution">IMPORTANT: This address will be used for delivering documents releated to your account. Ensure to notify the Bank in case of a change in Address</small>
+      <br>
+    <div class="form-row">
+      <div>
+        <label>Address:</label>
+
+    <input id="addressLine1" formControlName="addressLine1" type="text" [value]="selectedApplicant.Address" />
+ 
+  </div>
+  <div>
+    <label>City:</label>
+    <input type="text" [value]="selectedApplicant.City" />
+  </div>
+</div>
+<div class="form-row">
+  <div>
+    <label>Postal Code:</label>
+    <input type="text" [value]="selectedApplicant.PostalCode" />
+  </div>
+  <div>
+    <label>Country:</label>
+    <input type="text" [value]="selectedApplicant.Country" disabled />
+  </div>
+</div>
+<div class="form-row">
+  
+  <div class="inp">
+    <label>Mobile:</label>
+    <input type="text" [value]="selectedApplicant.Mobile" />
+  </div>
+</div>
+<small> SMS alerts and One Time Password (OTP) will be sent to this number.</small>
+</form>
+</div>
+<ng-template #loading>
+<p>Loading...</p>
+</ng-template>  -->
+
+<!-- activate-account-page.component.html -->
+<div *ngIf="(selectedApplicant$ | async) as selectedApplicant; else loading">
+  <form [formGroup]="selectedApplicantForm">
+    <h4>Update Personal Details</h4>
+    <div class="form-row">
+      <div>
+        <label>First Name:</label>
+        <input type="text" formControlName="firstName"  />
+      </div>
+      <div>
+        <label>Last Name:</label>
+        <input type="text" formControlName="lastName"  />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="inp">
+        <label>Mother's Maiden Name:</label>
+        <input type="text" formControlName="MothersName" />
+      </div>
+    </div>
+    <small class="caution">It is a Security Question. We may use for Verifying your Identity in the Future.</small>
+    <h4>Please Provide your Address in Germany</h4>
+    <small class="caution">IMPORTANT: This address will be used for delivering documents related to your account. Ensure to notify the Bank in case of a change in Address</small>
+    <br>
+    <div class="form-row">
+      <div>
+        <label>Address:</label>
+        <input id="addressLine1" formControlName="addressLine1" type="text" />
+      </div>
+      <div>
+        <label>City:</label>
+        <input type="text" formControlName="City" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label>Postal Code:</label>
+        <input type="text" formControlName="PostalCode" />
+      </div>
+      <div>
+        <label>Country:</label>
+        <input type="text" formControlName="Country"  />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="inp">
+        <label>Mobile:</label>
+        <input type="text" formControlName="Mobile" />
+      </div>
+    </div>
+    <small>SMS alerts and One Time Password (OTP) will be sent to this number.</small>
+   
+  </form>
+</div>
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>

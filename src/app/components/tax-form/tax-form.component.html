@@ -1,0 +1,146 @@
+   <!-- <form [formGroup]="taxForm">
+    <div>
+      <label>Are you a tax resident of Germany?</label>
+      <label><input type="radio" formControlName="taxResidentGermany" value="yes"> Yes</label>
+      <label><input type="radio" formControlName="taxResidentGermany" value="no"> No</label>
+    </div>
+    
+    <div [hidden]="taxForm.get('taxResidentGermany')?.value !== 'yes'">
+      <label>Enter TIN number</label>
+      <input type="text" formControlName="germanyTIN">
+    </div>
+  
+    <div>
+      <label>Are you a tax resident or a citizen of the US?</label>
+      <label><input type="radio" formControlName="taxResidentUS" value="yes"> Yes</label>
+      <label><input type="radio" formControlName="taxResidentUS" value="no"> No</label>
+    </div>
+    
+    <div [hidden]="taxForm.get('taxResidentUS')?.value !== 'yes'">
+      <label>Do you have a TIN from the US?</label>
+      <label><input type="radio" formControlName="usTIN" value="yes"> Yes</label>
+      <label><input type="radio" formControlName="usTIN" value="no"> No</label>
+    </div>
+    
+    <div [hidden]="taxForm.get('usTIN')?.value !== 'yes'">
+      <label>Enter TIN number</label>
+      <input type="text" formControlName="usTINNumber">
+    </div>
+  
+    <div [hidden]="taxForm.get('usTIN')?.value !== 'no'">
+      <label>Have you applied for TIN in US</label>
+      <label><input type="radio" formControlName="appliedUsTIN" value="yes"> Yes</label>
+      <label><input type="radio" formControlName="appliedUsTIN" value="no"> No</label>
+    </div>
+  
+    <div [hidden]="taxForm.get('taxResidentUS')?.value === null">
+      <label>Are you a tax resident of a jurisdiction other than Germany or the US?</label>
+      <label><input type="radio" formControlName="taxResidentOther" value="yes"> Yes</label>
+      <label><input type="radio" formControlName="taxResidentOther" value="no"> No</label>
+    </div>
+  
+    <div [hidden]="taxForm.get('taxResidentOther')?.value !== 'yes'">
+      <label>Select country</label>
+      <select formControlName="otherCountry">
+        <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+      </select>
+      
+      <label>Do you have a taxpayer identification number issued by your jurisdiction?</label>
+      <label><input type="radio" formControlName="otherTIN" value="yes"> Yes</label>
+      <label><input type="radio" formControlName="otherTIN" value="no"> No</label>
+    </div>
+    
+    <div [hidden]="taxForm.get('otherTIN')?.value !== 'yes'">
+      <label>Enter TIN number</label>
+      <input type="text" formControlName="otherJurisdictionTIN">
+    </div>
+    
+    <div [hidden]="taxForm.get('otherTIN')?.value !== 'no'">
+      <label>Reason for not having TIN</label>
+      <select formControlName="otherJurisdictionTINReason">
+        <option *ngFor="let reason of reasons" [value]="reason">{{reason}}</option>
+      </select>
+    </div>
+  
+  </form>
+   -->
+<!-- tax-form.component.html -->
+
+<form [formGroup]="taxForm" class="tax-form-container">
+  
+  <div>
+    <label>Are you a tax resident of Germany?</label>
+    <div class="radio-group">
+      <label><input type="radio" formControlName="taxResidentGermany" value="yes"> Yes</label>
+      <label><input type="radio" formControlName="taxResidentGermany" value="no"> No</label>
+    </div>
+  </div>
+  
+  <div [hidden]="taxForm.get('taxResidentGermany')?.value !== 'yes'">
+    <label>Enter TIN number</label>
+    <input type="text" formControlName="germanyTIN">
+  </div>
+
+  <div>
+    <label>Are you a tax resident or a citizen of the US?</label>
+    <div class="radio-group">
+      <label><input type="radio" formControlName="taxResidentUS" value="yes"> Yes</label>
+      <label><input type="radio" formControlName="taxResidentUS" value="no"> No</label>
+    </div>
+  </div>
+
+  <div [hidden]="taxForm.get('taxResidentUS')?.value !== 'yes'">
+    <label>Do you have a TIN from the US?</label>
+    <div class="radio-group">
+      <label><input type="radio" formControlName="usTIN" value="yes"> Yes</label>
+      <label><input type="radio" formControlName="usTIN" value="no"> No</label>
+    </div>
+  </div>
+
+  <div [hidden]="taxForm.get('usTIN')?.value !== 'yes'">
+    <label>Enter TIN number</label>
+    <input type="text" formControlName="usTINNumber">
+  </div>
+
+  <div [hidden]="taxForm.get('usTIN')?.value !== 'no'">
+    <label>Have you applied for TIN in US</label>
+    <div class="radio-group">
+      <label><input type="radio" formControlName="appliedUsTIN" value="yes"> Yes</label>
+      <label><input type="radio" formControlName="appliedUsTIN" value="no"> No</label>
+    </div>
+  </div>
+
+  <div [hidden]="taxForm.get('taxResidentUS')?.value === null">
+    <label>Are you a tax resident of a jurisdiction other than Germany or the US?</label>
+    <div class="radio-group">
+      <label><input type="radio" formControlName="taxResidentOther" value="yes"> Yes</label>
+      <label><input type="radio" formControlName="taxResidentOther" value="no"> No</label>
+    </div>
+  </div>
+
+  <div [hidden]="taxForm.get('taxResidentOther')?.value !== 'yes'">
+    <label>Select country</label>
+    <select formControlName="otherCountry">
+      <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+    </select>
+    
+    <label>Do you have a taxpayer identification number issued by your jurisdiction?</label>
+    <div class="radio-group">
+      <label><input type="radio" formControlName="otherTIN" value="yes"> Yes</label>
+      <label><input type="radio" formControlName="otherTIN" value="no"> No</label>
+    </div>
+  </div>
+
+  <div [hidden]="taxForm.get('otherTIN')?.value !== 'yes'">
+    <label>Enter TIN number</label>
+    <input type="text" formControlName="otherJurisdictionTIN">
+  </div>
+
+  <div [hidden]="taxForm.get('otherTIN')?.value !== 'no'">
+    <label>Reason for not having TIN</label>
+    <select formControlName="otherJurisdictionTINReason">
+      <option *ngFor="let reason of reasons" [value]="reason">{{reason}}</option>
+    </select>
+  </div>
+
+</form>

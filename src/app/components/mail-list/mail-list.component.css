@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    margin-top: 10px;
+ 
+  }
+  
+  .mail-list {
+    width: 30%;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .mail-detail {
+    width: 69%;
+    height: auto;
+    padding: 10px;
+    border: 0.1px solid black;
+  }
+  
+  .boxed{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    border: 0.1px solid black;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+
+  .subjectedbox{
+    /* border: 0.1px solid black; */
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .bodybox{
+    border: 0.1px solid black;
+    padding: 20px;
+    margin-bottom: 50px;
+  }

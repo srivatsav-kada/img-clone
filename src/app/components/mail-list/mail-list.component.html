@@ -1,0 +1,46 @@
+<!-- <div>
+  <h2>{{ folder | titlecase }}</h2>
+  <ul>
+    <li *ngFor="let mail of mails">
+      <h3><a [routerLink]="['/home/SecureMail/mail', mail.id]">{{ mail.subject }}</a></h3>
+      <p>{{ mail.body }}</p>
+      <small>{{ mail.timestamp | date:'short' }}</small>
+    </li>
+  </ul>
+  <div *ngIf="mails.length === 0">No mails</div>
+</div> -->
+
+
+<div class="container">
+  <div class="mail-list">
+    <h2>Sent</h2>
+    <ul type="none">
+      <li *ngFor="let mail of mails" (click)="selectMail(mail)">
+        <div class="boxed">
+          <h3>{{ mail.subject }}</h3>
+          <p>{{ mail.timestamp | date:'short' }}</p>
+        </div>
+        
+      </li>
+    </ul>
+    <div *ngIf="mails.length === 0">No mails</div>
+  </div>
+  <div class="mail-detail">
+    <div *ngIf="selectedMail">
+      <div class="subjectedbox">
+      <h2>SUBJECT : {{ selectedMail.subject  }}</h2>
+      <small>{{ selectedMail.timestamp | date:'short' }}</small>
+    </div>
+   
+    <div class="bodybox">
+      <h4><b>BODY</b></h4>
+      <p>{{ selectedMail.body }}</p>
+    </div>
+      
+      
+    </div>
+    <div *ngIf="!selectedMail">
+      <p style="font-size: 25px;">Select any mail to display</p>
+    </div>
+  </div>
+</div>

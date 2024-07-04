@@ -1,0 +1,4 @@
+{
+    "/:userid/applynow": "/users/:userid/applynow"
+  }
+  

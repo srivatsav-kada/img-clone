@@ -1,0 +1,114 @@
+<div class="form-container">
+    <br>
+    <h4>Create A New Account</h4>
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          class="form-control"
+          ngModel
+          required
+          minlength="1"
+          maxlength="15"
+          pattern="^[a-zA-Z0-9]+( [a-zA-Z0-9]+)*$"
+          #username="ngModel"
+        />
+        <div *ngIf="username.invalid && (username.dirty || username.touched)">
+          <p *ngIf="username.errors?.['required']">Username is required.</p>
+          <p *ngIf="username.errors?.['maxlength']">Username must be less than 15 characters.</p>
+          <p *ngIf="username.errors?.['pattern']">Username must contain only alphabets and numbers and single spaces.</p>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          ngModel
+          required
+          email
+          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+          #email="ngModel"
+        />
+        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+          <p *ngIf="email.errors?.['required']">Email is required.</p>
+          
+          <p *ngIf="email.errors?.['pattern']">Email pattern is invalid.</p>
+        </div>
+      </div>
+  
+      <div class="dropdown">
+        <select
+          class="dropbtn"
+          required
+          ngModel
+          name="country"
+          #country="ngModel"
+        >
+          <option value="" disabled selected>Choose Country</option>
+          <option value="India">India</option>
+          <option value="United States">United States</option>
+          <option value="Germany">Germany</option>
+          <option value="France">France</option>
+          <option value="Russia">Russia</option>
+        </select>
+        <div *ngIf="country.invalid  && (country.dirty || country.touched)">
+          <p *ngIf="country.errors?.['required']">Country selection is required.</p>
+        </div>
+      </div>
+  
+      <br />
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          ngModel
+          required
+          minlength="8"
+          maxlength="20"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+"
+          #password="ngModel"
+        />
+        <div *ngIf="password.invalid  && (password.dirty || password.touched)">
+          <p *ngIf="password.errors?.['required']">Password is required.</p>
+          <p *ngIf="password.errors?.['minlength']">Password must be at least 8 characters long.</p>
+          <p *ngIf="password.errors?.['maxlength']">Password must be less than 20 characters.</p>
+          <p *ngIf="password.errors?.['pattern']">
+            Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.
+          </p>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirmPassword"
+          class="form-control"
+          ngModel
+          required
+         
+          #confirmPassword="ngModel"
+          [pattern]="password.value"
+        />
+        <div *ngIf="confirmPassword.invalid  && (confirmPassword.dirty || confirmPassword.touched)">
+          <p *ngIf="confirmPassword.errors?.['required']">Confirm password is required.</p>
+          <p *ngIf="confirmPassword.errors?.['pattern']">Passwords do not match.</p>
+        </div>
+      </div>
+  
+      <button type="submit" class="btn">Register</button>
+    </form>
+  </div>
+  

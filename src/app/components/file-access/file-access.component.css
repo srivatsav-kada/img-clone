@@ -1,0 +1,54 @@
+.uploaded-file {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .no-file {
+    text-align: center;
+    color: red;
+  }
+  
+  .month-list {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .month-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .month-list li:last-child {
+    border-bottom: none;
+  }
+  
+  h2, h4 {
+    margin-top: 0;
+  }
+  
+  .custom-button {
+    margin-left: 10px;
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  .custom-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  .custom-button:disabled {
+    background-color: #ccc; /* Gray background when disabled */
+    color: #666; /* Darker text when disabled */
+    cursor: not-allowed; /* Not-allowed cursor when disabled */
+  }
+  

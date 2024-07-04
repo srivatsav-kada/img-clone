@@ -1,0 +1,130 @@
+<!-- 
+<mat-toolbar >
+  <div class="toolbarclass">
+  <mat-toolbar-row style="justify-content: space-between;">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="../../../assets/icici_logo.svg" width="210px%" height="95%" class="imageclass" alt="image">
+
+    <button mat-button (click)="logoutMeth()" style="margin-left: auto;">
+      <mat-icon>exit_to_app</mat-icon> Logout
+    </button>
+  </mat-toolbar-row>
+</div>
+</mat-toolbar>
+
+<mat-sidenav-container style="background-color: white;">
+  <mat-sidenav #sidenav opened="true" mode="side" style="width: 210px;">
+      <div class="sidenav-icon-text">
+          <img width="90px" height="90px" src="../../../assets/icici_logo_90x90.jpg"  class="imageclass" alt="image">
+        <div class="sidenav-texts">
+          <span *ngIf="username$ | async as username" style="margin-left: auto;">USER :  {{ username | uppercase}}</span>
+          
+          
+          
+        </div>
+        <div class="sidenav-texts"><span *ngIf="username$ | async as username" style="margin-left: auto;">Last visited</span>
+          <span style="margin-left: auto;">{{today | date:"MMM dd, yyyy hh:mm a"}}</span>
+          <span  style="margin-left: auto;">App Version : 1.9</span>
+
+        </div>
+          
+      </div>
+      
+      <mat-nav-list>
+          <a [disableRipple]="true" routerLink="/home/homePage" mat-list-item>Home</a>
+          <a [disableRipple]="true" routerLink="/home/applyNow" mat-list-item>Apply Now </a>
+          <a [disableRipple]="true" routerLink="/home/SecureMail" mat-list-item>Secure Mail </a>
+          <a [disableRipple]="true" routerLink="/home/homePage"  mat-list-item>About Us</a>
+      </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <div class="recks" style="height: 90vh;">
+          
+        
+          <router-outlet></router-outlet>
+      </div>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<mat-toolbar>
+  <div class="toolbarclass">
+    <mat-toolbar-row style="justify-content: space-between;">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      
+      <img src="../../../assets/icici_logo.svg" width="210px%" height="95%" class="imageclass" alt="image">
+      <h5 style="color: white; margin-left: 27%;">{{toolbarTitle}}</h5>
+      <button mat-button (click)="logoutMeth()" style="margin-left: auto;">
+        <mat-icon>exit_to_app</mat-icon> Logout
+      </button>
+    </mat-toolbar-row>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container style="background-color: white;">
+  <mat-sidenav #sidenav opened="true" mode="side" style="width: 210px;">
+    <div class="sidenav-icon-text">
+      <img width="90px" height="90px" src="../../../assets/icici_logo_90x90.jpg" class="imageclass" alt="image">
+      <div class="sidenav-texts">
+        <span *ngIf="username$ | async as username">USER: {{ username | uppercase }}</span>
+      </div>
+      <div class="sidenav-texts">
+        <span >Last visited:</span>
+        <span > {{ today | date:"MMM dd, yyyy hh:mm a" }}</span>
+        <span>App Version: 1.9</span>
+      </div>
+    </div>
+
+    <mat-nav-list>
+<div class="icon-text">
+  <a [disableRipple]="true" class="eheasder" routerLink="/home/homePage" mat-list-item><img width="25px" height="25px" src="../../../assets/home_gray.svg" alt="Image 2">Home</a>
+</div>
+<div class="icon-text">
+  <a [disableRipple]="true" class="eheasder" routerLink="/home/applyNow" mat-list-item><img width="25px" height="25px" src="../../../assets/apply_gray.svg" alt="Image 2">Apply Now</a>
+</div>
+<div class="icon-text">
+  <a [disableRipple]="true" class="eheasder" routerLink="/home/SecureMail" mat-list-item><img width="25px" height="25px" src="../../../assets/mailbox-gray.svg" alt="Image 2">Secure Mail</a>
+</div>
+<!-- <div class="icon-text">
+  <a [disableRipple]="true" class="eheasder" routerLink="/home/activateAccount" mat-list-item><img width="25px" height="25px" src="../../../assets/home_gray.svg" alt="Image 2">Activate Account</a>
+</div>
+<div class="icon-text">
+  <a [disableRipple]="true" class="eheasder" routerLink="/home/taxForm" mat-list-item><img width="25px" height="25px" src="../../../assets/home_gray.svg" alt="Image 2">Tax Form</a>
+</div>
+<div class="icon-text">
+  <a [disableRipple]="true" class="eheasder" routerLink="/home/activateAccountPswd" mat-list-item><img width="25px" height="25px" src="../../../assets/home_gray.svg" alt="Image 2">Activate Account Password</a>
+</div> -->
+<div class="icon-text">
+  <a [disableRipple]="true" class="eheasder" routerLink="/home/ActivateAccountDE" mat-list-item><img width="25px" height="25px" src="../../../assets/home_gray.svg" alt="Image 2">ActivateAccount</a>
+</div>
+<div class="icon-text">
+  <a [disableRipple]="true" class="eheasder" routerLink="/home/transferMoneyHome" mat-list-item><img width="25px" height="25px" src="../../../assets/transfer_money_nav.svg" alt="Image 2">TransferMoney</a>
+</div>
+ <!-- <div class="icon-text">
+  <a [disableRipple]="true" class="eheasder" routerLink="/home/viewBeneficiary" mat-list-item><img width="25px" height="25px" src="../../../assets/transfer_money_nav.svg" alt="Image 2">viewBeneficiary</a>
+</div> -->
+<!--
+<div class="icon-text">
+  <a [disableRipple]="true" class="eheasder" routerLink="/home/sendMoney" mat-list-item><img width="25px" height="25px" src="../../../assets/transfer_money_nav.svg" alt="Image 2">send money</a>
+</div> -->
+<div class="icon-text">
+  <a [disableRipple]="true" class="eheasder" routerLink="/home/FileAccess" mat-list-item><img width="25px" height="25px" src="../../../assets/transfer_money_nav.svg" alt="Image 2">FileAccess  </a>
+</div>
+<div class="icon-text">
+  <a [disableRipple]="true" (click)="logoutMeth()" class="eheasder"  mat-list-item><img width="25px" height="25px" src="../../../assets/home_gray.svg" alt="Image 2">Logout</a>
+</div>
+    
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="recks" style="height: 90vh;">
+      <!-- Your content here -->
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

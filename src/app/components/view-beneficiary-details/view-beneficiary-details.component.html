@@ -1,0 +1,20 @@
+<!-- src/app/components/beneficiary-details/beneficiary-details.component.html -->
+
+<div *ngIf="selectedBeneficiary$ | async as selectedBeneficiary">
+ 
+    <form [formGroup]="beneficiaryForm">
+      <h4>Beneficiary Details </h4>
+      <label for="Name">Beneficiary Name</label>
+      <input id="Name" formControlName="Name" />
+  
+      <label for="age">Age:</label>
+      <input id="age" formControlName="age" />
+
+      <label for="IBAN">IBAN:</label>
+      <input id="IBAN" formControlName="IBAN" />
+
+      <label for="beneficiaryType">BeneficiaryType:</label>
+      <input id="beneficiaryType" formControlName="beneficiaryType" />
+    </form>
+  </div>
+  

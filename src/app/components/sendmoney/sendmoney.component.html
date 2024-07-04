@@ -1,0 +1,68 @@
+<form [formGroup]="sendMoneyForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Debit Account Number:</label>
+    <input type="text" formControlName="debitAccount" readonly>
+  </div>
+  <div>
+    <label>Beneficiary Type:</label>
+    <select formControlName="beneficiaryType">
+      <option *ngFor="let type of beneficiaryTypes" [value]="type">{{ type }}</option>
+    </select>
+  </div>
+  <div>
+    <label>Amount:</label>
+    <input type="number" formControlName="amount">
+  </div>
+  <div>
+    <label>Purpose of Transfer:</label>
+    <textarea formControlName="purpose"></textarea>
+  </div>
+
+  <!-- New Section for Transfer Type -->
+  <div>
+    <label>Transfer Type:</label>
+    <div>
+      <input type="radio" formControlName="transferType" value="immediate"> Immediate
+      <input type="radio" formControlName="transferType" value="scheduled"> Scheduled
+      <input type="radio" formControlName="transferType" value="recurring"> Recurring
+    </div>
+  </div>
+
+  <!-- Conditional Fields Based on Transfer Type -->
+  <div *ngIf="sendMoneyForm.get('transferType')?.value === 'scheduled'">
+    <label>Scheduled Date:</label>
+    <input type="date" formControlName="scheduledDate">
+  </div>
+
+  <div *ngIf="sendMoneyForm.get('transferType')?.value === 'recurring'">
+    <label>Frequency:</label>
+    <select formControlName="frequency">
+      <option *ngFor="let freq of frequencies" [value]="freq">{{ freq }}</option>
+    </select>
+    <label>Start Date:</label>
+    <input type="date" formControlName="startDate">
+    <label>Installments:</label>
+    <input type="number" formControlName="installments">
+  </div>
+
+  <div>
+    Please Note
+  </div>
+  <div>
+    <ul>
+      <li>
+        Any Other Bank payment done on bank holidays or after cut-off time (2:00pm CET) on working days will
+        be executed on next working day.
+      </li>
+    </ul>
+  </div>
+
+  <div class="button-container">
+    <button type="button" class="previous" >Previous</button>
+    <button type="button" class="next" [disabled]="!sendMoneyForm.valid" (click)="onNext()">Next</button>
+  </div>
+
+  <!-- <div>
+    <button type="submit" [disabled]="!sendMoneyForm.valid">Send Money</button>
+  </div> -->
+</form>

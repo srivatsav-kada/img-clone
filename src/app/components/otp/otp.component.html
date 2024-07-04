@@ -1,0 +1,63 @@
+<!-- <h1 mat-dialog-title style="background-color: orange;">OTP Verification</h1>
+<div mat-dialog-content>
+  <p style="color: green; text-align: center;"> <strong>OTP :{{ generatedOtp$ | async }}</strong></p>
+  <p>
+    Please enter OTP received on your registered mobile number/email address
+  </p>
+  <form [formGroup]="otpForm" (ngSubmit)="verifyOtp()">
+    <mat-form-field>
+      <mat-label >Enter OTP</mat-label>
+      <input matInput formControlName="enteredOtp">
+    </mat-form-field>
+    <p *ngIf="otpStatus$ | async as otpStatus">{{ otpStatus }}</p>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="resendOtp()">Resend OTP</button>
+  <button mat-button (click)="verifyOtp()">Verify</button>
+</div> -->
+
+<!-- 
+<h1 mat-dialog-title>OTP Verification</h1>
+<div mat-dialog-content>
+  <p class="otpname"><strong>OTP : {{ generatedOtp }}</strong></p>
+  <p>Please enter the OTP received on your registered mobile number/email address</p>
+
+  <form [formGroup]="otpForm" (ngSubmit)="verifyOtp()">
+    
+      <label>Enter OTP</label>
+      <input class="dfkdfd" formControlName="enteredOtp">
+
+    <p *ngIf="otpStatus" class="status-message" [ngClass]="{'error': otpStatus === 'Invalid OTP', 'success': otpStatus === 'OTP sent successfully'}">
+      {{ otpStatus }}
+    </p>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="resendOtp()">Resend OTP</button>
+  <button mat-button (click)="verifyOtp()">Verify</button>
+</div> -->
+
+<h1 mat-dialog-title>OTP Verification</h1>
+<div mat-dialog-content>
+  <p class="otpname"><strong>OTP : {{ generatedOtp }}</strong></p>
+  <p>Please enter the OTP received on your registered mobile number/email address</p>
+
+  <form [formGroup]="otpForm" (ngSubmit)="verifyOtp()">
+    <label>Enter OTP</label>
+    <input class="dfkdfd" formControlName="enteredOtp" (keypress)="isNumberKey($event)">
+    
+    <div *ngIf="(otpForm.controls['enteredOtp'].touched || otpForm.controls['enteredOtp'].dirty  )&& otpForm.controls['enteredOtp'].invalid">
+      <small class="error" *ngIf="otpForm.controls['enteredOtp'].errors?.['required']" style="color: red; text-align: start;">OTP is required</small>
+      <small class="error" *ngIf="otpForm.controls['enteredOtp'].errors?.['pattern']" style="color: red;">Enter numbers only</small>
+    </div>
+
+    <p *ngIf="otpStatus" class="status-message" [ngClass]="{'error': otpStatus === 'Invalid OTP', 'success': otpStatus === 'OTP sent successfully'}">
+      {{ otpStatus }}
+    </p>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="resendOtp()">Resend OTP</button>
+  <button mat-button (click)="verifyOtp()">Verify</button>
+</div>
